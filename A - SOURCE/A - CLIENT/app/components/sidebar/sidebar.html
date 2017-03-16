@@ -1,0 +1,59 @@
+<div class="profile-sidebar">
+
+    <div class="form-group">
+        <div class="profile-userpic">
+            <img ng-src="{{accountProfileImage}}"
+                 src="{{accountProfileImage}}"
+                 class="img-responsive" alt="">
+        </div>
+
+        <div class="profile-usertitle">
+            <div class="profile-usertitle-name">
+                {{accountProfileName}}
+            </div>
+            <div class="profile-usertitle-job">
+                {{accountProfileTitle}}
+            </div>
+        </div>
+
+        <div class="profile-userbuttons">
+            <a type="button"
+               href="https://www.facebook.com/duylinh.redplane"
+               target="_blank"
+               class="btn btn-success btn-sm">
+                <span>Facebook</span>
+            </a>
+            <button type="button"
+                    class="btn btn-danger btn-sm" ng-click="clickSendMessage()">
+                <span>Message</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="profile-usermenu">
+        <ul class="nav">
+            <li ng-class="isUrlChosen('/personal-summary') ? 'active' : ''">
+                <a href="#!personal-summary">
+                    <i class="fa fa-user-o">
+                        <span>Personal summary</span>
+                    </i>
+                </a>
+            </li>
+            <li ng-class="isUrlChosen('/technical-skill') ? 'active' : ''">
+                <a href="#!technical-skill">
+                    <i class="fa fa-user-o">
+                        <span>Technical skill</span>
+                    </i>
+                </a>
+            </li>
+            <li ng-class="isUrlChosen('/project-summary') ? 'active' : ''">
+                <a href="#!project-summary">
+                    <i class="fa fa-user-o">
+                        <span>Projects</span>
+                    </i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

@@ -1,13 +1,66 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('apiDocumentation', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+angular
+    .module('api-documentation', [
+        'ngRoute',
+        'navigation-bar',
+        'sidebar',
+        'personal-summary',
+        'personal-technical-skill',
+        'project-summary',
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+        'message-service',
+        'api-setting-service',
+        'general-info-service'
+])
+    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+
+    // Url hash configuration
+    $locationProvider
+        .hashPrefix('!');
+
+    // Fallback url.
+    $routeProvider.otherwise({redirectTo: '/personal-summary'});
+
+}])
+    .controller('ApiDocumentationController', ['GeneralInfoService', '$scope', function (GeneralInfoService, $scope) {
+        $scope.sidebarItems = [];
+
+        $scope.clickSendMessage = function(){
+            var a = GeneralInfoService.getPersonalMission()
+                .then(function(x){
+                    console.log(x);
+                })
+                .catch(function(x){
+                    console.log(x);
+                });
+        };
+
+        // List of navigation bar items.
+        $scope.navigationBarItems = [];
+
+        $scope.init = function () {
+
+            for (var index = 0; index < 10; index++) {
+                var sidebarItem = {};
+                var navigationBarItem = {};
+
+                sidebarItem = {
+                    enabled: false,
+                    href: '#!personal-summary',
+                    title: 'Item_' + index,
+                    icon: 'glyphicon glyphicon-home'
+                };
+
+                navigationBarItem = {
+                    enabled: false,
+                    title: 'Navigation ' + index,
+                    icon: 'glyphicon glyphicon-home'
+                };
+
+                $scope.sidebarItems.push(sidebarItem);
+                $scope.navigationBarItems.push(navigationBarItem);
+            }
+        };
+    }]);
