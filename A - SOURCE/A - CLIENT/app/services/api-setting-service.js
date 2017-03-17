@@ -2,7 +2,7 @@ angular.module("api-setting-service", [])
 .service("ApiSettingService", function(){
 
     // Application base url.
-    this.applicationLink = "http://localhost:8000";
+    this.applicationLink = "";
 
     // Url of getting personal objective.
     this.getPersonalObjectiveLink = this.applicationLink + '/' + 'assets/data/main-objective.json';
