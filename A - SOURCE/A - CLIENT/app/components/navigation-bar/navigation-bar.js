@@ -5,10 +5,7 @@ angular.module('navigation-bar', ['ngRoute'])
         return {
             restrict: "E",
             controller: "NavigationBarController",
-            templateUrl: "components/navigation-bar/navigation-bar.html",
-            scope: {
-                items: "="
-            }
+            templateUrl: "components/navigation-bar/navigation-bar.html"
         };
     })
     .controller('NavigationBarController', [function () {

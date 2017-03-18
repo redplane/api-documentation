@@ -4,6 +4,8 @@
 angular
     .module('api-documentation', [
         'ngRoute',
+        'pascalprecht.translate',
+
         'navigation-bar',
         'sidebar',
         'personal-summary',
@@ -13,54 +15,29 @@ angular
         'message-service',
         'api-setting-service',
         'general-info-service'
-])
-    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    ])
+    .config(['$locationProvider', '$routeProvider', '$translateProvider',
+        function ($locationProvider, $routeProvider, $translateProvider) {
 
-    // Url hash configuration
-    $locationProvider
-        .hashPrefix('!');
+            // Use static files loader.
+            $translateProvider.useStaticFilesLoader({
+                prefix: 'assets/data/language/locale-',
+                suffix: '.json'
+            });
 
-    // Fallback url.
-    $routeProvider.otherwise({redirectTo: '/personal-summary'});
+            // Url hash configuration
+            $locationProvider
+                .hashPrefix('!');
 
-}])
-    .controller('ApiDocumentationController', ['GeneralInfoService', '$scope', function (GeneralInfoService, $scope) {
-        $scope.sidebarItems = [];
+            // Fallback url.
+            $routeProvider.otherwise({redirectTo: '/personal-summary'});
 
-        $scope.clickSendMessage = function(){
-            var a = GeneralInfoService.getPersonalMission()
-                .then(function(x){
-                    console.log(x);
-                })
-                .catch(function(x){
-                    console.log(x);
-                });
-        };
+        }])
+    .controller('ApiDocumentationController', ['GeneralInfoService', '$scope',
+        function (GeneralInfoService, $scope) {
 
-        // List of navigation bar items.
-        $scope.navigationBarItems = [];
-
+        // This function is called when directive has been initialized successfully.
         $scope.init = function () {
 
-            for (var index = 0; index < 10; index++) {
-                var sidebarItem = {};
-                var navigationBarItem = {};
-
-                sidebarItem = {
-                    enabled: false,
-                    href: '#!personal-summary',
-                    title: 'Item_' + index,
-                    icon: 'glyphicon glyphicon-home'
-                };
-
-                navigationBarItem = {
-                    enabled: false,
-                    title: 'Navigation ' + index,
-                    icon: 'glyphicon glyphicon-home'
-                };
-
-                $scope.sidebarItems.push(sidebarItem);
-                $scope.navigationBarItems.push(navigationBarItem);
-            }
         };
     }]);
