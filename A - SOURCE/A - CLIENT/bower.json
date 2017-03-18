@@ -9,9 +9,9 @@
     "angular": "~1.5.0",
     "angular-route": "~1.5.0",
     "angular-loader": "~1.5.0",
-    "angular-mocks": "~1.5.0",
     "font-awesome": "fontawesome#^4.7.0",
-    "angular-timeline": "^1.7.0",
-    "angular-snow": "*"
+    "angular-bootstrap": "^2.5.0",
+    "jquery": "^3.2.0",
+    "bootstrap": "^3.3.7"
   }
 }

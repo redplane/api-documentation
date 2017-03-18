@@ -82,7 +82,6 @@ angular.module('personal-summary', [
             // Find certificates list.
             GeneralInfoService.getCertificates()
                 .then(function (x) {
-                    console.log(x);
                     var data = x.data;
                     if (data == null)
                         return;
@@ -94,7 +93,6 @@ angular.module('personal-summary', [
                     $scope.certificates = items;
                 })
                 .catch(function (x) {
-                    console.log(x);
                 });
         }
     }]);
