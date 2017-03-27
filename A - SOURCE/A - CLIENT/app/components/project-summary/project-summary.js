@@ -48,7 +48,7 @@ angular.module('project-summary', [
             // Check whether url is valid or not. If the url is not valid, fallback url will be used.
             $scope.getLink = function(url){
                 if (url == null || url.length < 1)
-                    return "javascript:void(0);"
+                    return "javascript:void(0);";
 
                 return url;
             }

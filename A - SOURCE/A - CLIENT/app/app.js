@@ -27,18 +27,12 @@ angular
     .controller('ApiDocumentationController', ['GeneralInfoService', '$scope', function (GeneralInfoService, $scope) {
         $scope.sidebarItems = [];
 
-        $scope.clickSendMessage = function(){
-            var a = GeneralInfoService.getPersonalMission()
-                .then(function(x){
-                    console.log(x);
-                })
-                .catch(function(x){
-                    console.log(x);
-                });
-        };
-
         // List of navigation bar items.
         $scope.navigationBarItems = [];
+
+        $scope.clickSidebarItem = function(item, i){
+            console.log(item);
+        };
 
         $scope.init = function () {
 

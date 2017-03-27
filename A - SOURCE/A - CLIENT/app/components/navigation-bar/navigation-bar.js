@@ -11,6 +11,9 @@ angular.module('navigation-bar', ['ngRoute'])
             }
         };
     })
-    .controller('NavigationBarController', [function () {
+    .controller('NavigationBarController', ['$scope', function ($scope) {
 
+        $scope.alert = function(){
+            alert('Hello world');
+        }
     }]);

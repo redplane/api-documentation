@@ -10,15 +10,11 @@ angular.module('sidebar', ['ngRoute', 'general-info-service'])
                 accountProfileName: '@',
                 accountProfileImage: '@',
                 accountProfileTitle: '@',
-                items: '=',
-                clickItem: '&'
+                items: '='
             }
         };
     })
-    .controller('SidebarController', ['$scope', '$location', 'GeneralInfoService', function ($scope, $location, GeneralInfoService) {
-        $scope.clickSidebarItem = function (item) {
-            $scope.clickDetails({item: item, i: item});
-        };
+    .controller('SidebarController', ['$scope', '$location', function ($scope, $location) {
 
         // Get location path.
         $scope.getLocation = function(){

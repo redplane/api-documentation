@@ -4,11 +4,6 @@ angular.module('personal-summary', [
     'ngRoute',
     'general-info-service'
 ])
-    .directive('personalSummary', function () {
-        return {
-            restrict: "E"
-        };
-    })
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
 
@@ -82,7 +77,6 @@ angular.module('personal-summary', [
             // Find certificates list.
             GeneralInfoService.getCertificates()
                 .then(function (x) {
-                    console.log(x);
                     var data = x.data;
                     if (data == null)
                         return;
