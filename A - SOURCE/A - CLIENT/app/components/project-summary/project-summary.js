@@ -33,7 +33,7 @@ angular.module('project-summary', [
             $scope.reloadProjects = function(){
                 GeneralInfoService.getProjects()
                     .then(function(x) {
-                        console.log(x);
+
                        var data = x.data;
                        if (data == null)
                            return;
@@ -43,7 +43,7 @@ angular.module('project-summary', [
                     .catch(function(x){
 
                     });
-            }
+            };
 
             // Check whether url is valid or not. If the url is not valid, fallback url will be used.
             $scope.getLink = function(url){

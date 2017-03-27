@@ -88,7 +88,6 @@ angular.module('personal-summary', [
                     $scope.certificates = items;
                 })
                 .catch(function (x) {
-                    console.log(x);
                 });
         }
     }]);

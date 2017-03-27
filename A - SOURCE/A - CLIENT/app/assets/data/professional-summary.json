@@ -1,9 +1,9 @@
 {
-  "title": "Professional summary",
+  "title": "PROFESSIONAL_SUMMARY",
   "icon": "glyphicon glyphicon-book",
   "paragraphs": [
-    "Using .NET, Javascript frameworks fluently",
-    "Having good knowledge about design patterns : Inversion of controls, MVVM, MVC, Unit of work, ...",
-    "Good at English"
+    "USING_NET_JAVASCRIPT_FLUENTLY",
+    "HAVING_GOOD_KNOWLEDGE_DESIGN_PATTERN",
+    "GOOD_AT_ENGLISH"
   ]
 }
