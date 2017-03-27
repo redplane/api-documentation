@@ -14,7 +14,7 @@ angular.module('sidebar', ['ngRoute', 'general-info-service'])
             }
         };
     })
-    .controller('SidebarController', ['$scope', '$location', function ($scope, $location) {
+    .controller('SidebarController', ['$scope', '$location', '$translate', function ($scope, $location, $translate) {
 
             // List of supported language.
             $scope.languages = [
