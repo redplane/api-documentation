@@ -12,6 +12,8 @@ angular
         'personal-technical-skill',
         'project-summary',
 
+        'viet-map',
+
         'message-service',
         'api-setting-service',
         'general-info-service'
@@ -34,12 +36,5 @@ angular
 
         }])
     .controller('ApiDocumentationController', ['GeneralInfoService', '$scope',
-        function (GeneralInfoService, $scope) {        // This function is called when directive has been initialized successfully.
-        $scope.clickSidebarItem = function(item, i){
-            console.log(item);
-        };
-
-        $scope.init = function () {
-
-        };
+        function (GeneralInfoService, $scope) {
     }]);
