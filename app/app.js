@@ -20,10 +20,17 @@ angular
 
         // 3rd libraries.
         'ngAnimate',
-        'toastr'
+        'toastr',
+
+        // Providers.
+        'api-interceptor'
+
     ])
-    .config(['$locationProvider', '$routeProvider', '$translateProvider',
-        function ($locationProvider, $routeProvider, $translateProvider) {
+    .config(['$locationProvider', '$routeProvider', '$translateProvider', '$httpProvider',
+        function ($locationProvider, $routeProvider, $translateProvider, $httpProvider) {
+
+            // Interceptor registration.
+            $httpProvider.interceptors.push('apiInterceptor');
 
             // Use static files loader.
             $translateProvider.useStaticFilesLoader({
@@ -41,4 +48,4 @@ angular
         }])
     .controller('ApiDocumentationController', ['GeneralInfoService', '$scope',
         function (GeneralInfoService, $scope) {
-    }]);
+        }]);
