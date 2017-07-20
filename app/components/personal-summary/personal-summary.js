@@ -10,84 +10,42 @@ angular.module('personal-summary', [
         $routeProvider
             .when('/personal-summary', {
                 controller: "PersonalSummaryController",
-                templateUrl: "components/personal-summary/personal-summary.html"
+                templateUrl: "components/personal-summary/personal-summary.html",
+                resolve: {
+                    'information': ['GeneralInfoService', function (GeneralInfoService) {
+
+                        // Initiate promises list.
+                        let promises = [];
+                        promises.push(GeneralInfoService.getObjectives());
+                        promises.push(GeneralInfoService.getSummaries());
+                        promises.push(GeneralInfoService.getCertificates());
+
+                        // Resolve all promises to display information.
+                        return Promise.all(promises)
+                            .then(function success(results) {
+                                return {
+                                    objectives: results[0].data,
+                                    summaries: results[1].data,
+                                    certificates: results[2].data
+                                }
+                            });
+                    }]
+                }
             });
     }])
-    .controller('PersonalSummaryController', ['GeneralInfoService', '$scope', function (GeneralInfoService, $scope) {
+    .controller('PersonalSummaryController', ['GeneralInfoService', '$scope', 'information',
+        function (GeneralInfoService, $scope, information) {
 
-        // Personal mission.
-        $scope.mission = null;
+            //#region Properties
 
-        // Personal summary.
-        $scope.summary = null;
+            // Personal objectives.
+            $scope.objectives = information.objectives;
 
-        // List of certificates.
-        $scope.certificates = null;
+            // Personal summaries.
+            $scope.summaries = information.summaries;
 
-        // Callback which is fired when personal summary directive is initially loaded.
-        $scope.init = function () {
+            // Personal certificates.
+            $scope.certificates = information.certificates;
 
-            // Reload personal mission.
-            $scope.reloadPersonalMission();
-
-            // Reload personal summary information.
-            $scope.reloadPersonalSummary();
-
-            // Reload certificates.
-            $scope.reloadCertifications();
-        };
-
-        // Reload personal mission.
-        $scope.reloadPersonalMission = function(){
-            // Find personal mission.
-            GeneralInfoService.getPersonalMission()
-                .then(function (x) {
-
-                    // Find response data.
-                    var data = x.data;
-                    if (data == null)
-                        return;
-
-                    // Find items list.
-                    $scope.mission = data;
-                })
-                .catch(function (x) {
-
-                });
-        };
-
-        // Reload personal summary.
-        $scope.reloadPersonalSummary = function () {
-            // Find personal summary.
-            GeneralInfoService.getPersonalSummary()
-                .then(function (x) {
-                    var data = x.data;
-                    if (data == null)
-                        return;
-
-                    $scope.summary = data;
-                })
-                .catch(function (x) {
-                });
-        };
-
-        // Reload list of certificates.
-        $scope.reloadCertifications = function () {
-
-            // Find certificates list.
-            GeneralInfoService.getCertificates()
-                .then(function (x) {
-                    var data = x.data;
-                    if (data == null)
-                        return;
-
-                    var items = data.items;
-                    if (items == null || items.length < 1)
-                        return;
-
-                    $scope.certificates = items;
-                })
-                .catch(function (x) {
-                });
-        }
-    }]);
+            //#endregion
+        }]);

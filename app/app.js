@@ -6,17 +6,21 @@ angular
         'ngRoute',
         'pascalprecht.translate',
 
+        // Components.
         'navigation-bar',
         'sidebar',
         'personal-summary',
         'personal-technical-skill',
         'project-summary',
 
-        'viet-map',
-
+        // Services.
         'message-service',
         'api-setting-service',
-        'general-info-service'
+        'general-info-service',
+
+        // 3rd libraries.
+        'ngAnimate',
+        'toastr'
     ])
     .config(['$locationProvider', '$routeProvider', '$translateProvider',
         function ($locationProvider, $routeProvider, $translateProvider) {

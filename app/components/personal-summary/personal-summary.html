@@ -1,17 +1,17 @@
 <div class="col-lg-12"
      ng-init="init()">
 
-    <div class="row form-group">
+    <div class="row form-group" >
         <div class="panel panel-danger">
 
             <div class="panel-heading">
                 <i class="{{mission.icon}}" aria-hidden="true"></i>
-                <span>{{mission.title | translate}}</span>
+                <span>{{objectives.title | translate}}</span>
             </div>
 
             <div class="panel-body">
                 <ul>
-                    <li ng-repeat="objective in mission.paragraphs">
+                    <li ng-repeat="objective in objectives.paragraphs">
                         <span>{{objective | translate}}</span>
                     </li>
                 </ul>
@@ -24,12 +24,12 @@
 
             <div class="panel-heading">
                 <i class="{{summary.icon}}" aria-hidden="true"></i>
-                <span>{{summary.title | translate}}</span>
+                <span>{{summaries.title | translate}}</span>
             </div>
 
             <div class="panel-body">
                 <ul>
-                    <li ng-repeat="paragraph in summary.paragraphs">
+                    <li ng-repeat="paragraph in summaries.paragraphs">
                         <span>{{paragraph | translate}}</span>
                     </li>
                 </ul>
@@ -45,7 +45,7 @@
             <div class="panel-body">
                 <div class="timeline-centered">
                     <article class="timeline-entry"
-                             ng-repeat="certificate in certificates">
+                             ng-repeat="certificate in certificates.items">
                         <div class="timeline-entry-inner">
                             <div class="timeline-icon bg-success">
                                 <i class="entypo-feather"></i>
