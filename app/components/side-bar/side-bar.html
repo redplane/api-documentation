@@ -4,7 +4,7 @@
     <div class="form-group">
         <div class="profile-userpic">
             <img ng-src="{{accountProfileImage}}"
-                 src="{{accountProfileImage}}"
+                 ng-src="{{accountProfileImage}}"
                  class="img-responsive" alt="">
         </div>
 
@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <select class="form-control"
+        <select class="form-control language-seletion-box"
                 ng-model="currentLanguage"
                 ng-change="changeLanguage()"
                 ng-options="language.name | translate for language in languages">

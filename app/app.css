@@ -1,0 +1,6 @@
+@media print {
+
+    select.language-seletion-box{
+        visibility: collapse !important;
+    }
+}

@@ -1,6 +1,114 @@
 {
   "projects": [
     {
+      "name": "VINCI",
+      "from": "2017-09-01",
+      "to": "Now",
+      "company": "FPT Software & Petronas",
+      "descriptions": [
+        "Make a system that allows users to monitor their infrastructure."
+      ],
+      "roles": [
+        "Developer"
+      ],
+      "responsibilities": [
+        "Be a back-end & front-end developer.",
+        "Instruct team members to follow project technology.",
+        "Create back-end & front-end project structure.",
+        "Meet customers, verify requirements, define project solution."
+      ],
+      "technologies": [
+        {
+          "name": "ASP.NET Web API 2"
+        },
+        {
+          "name": "Entity Framework 6.1"
+        },
+        {
+          "name": "Visual Studio 2017 Community"
+        },
+        {
+          "name": "TFS Team foundation."
+        },
+        {
+          "name": "AngularJS"
+        },
+        {
+          "name": "Webpack"
+        }
+      ]
+    },
+    {
+      "name": "POINT",
+      "from": "2017-06-01",
+      "to": "2017-09-01",
+      "company": "FPT Software & Petronas",
+      "descriptions": [
+        "Upgrade a system from share point technology to ASP.NET Web API & AngularJS."
+      ],
+      "roles": [
+        "Developer"
+      ],
+      "responsibilities": [
+        "Be a back-end & front-end developer.",
+        "Instruct team members to follow project technology.",
+        "Create back-end & front-end project structure."
+      ],
+      "technologies": [
+        {
+          "name": "ASP.NET Web API 2"
+        },
+        {
+          "name": "Entity Framework 6.1"
+        },
+        {
+          "name": "Visual Studio 2017 Community"
+        },
+        {
+          "name": "TFS Team foundation."
+        },
+        {
+          "name": "AngularJS"
+        }
+      ]
+    },
+    {
+      "name": "Immersive",
+      "from": "2017-04-01",
+      "to": "2017-05-01",
+      "company": "FPT Software",
+      "descriptions": [
+        "Develop a system that allows user to search for properties rental in Australia."
+      ],
+      "roles": [
+        "Developer"
+      ],
+      "responsibilities": [
+        "Be a back-end & front-end developer.",
+        "Instruct team members to follow project technology."
+      ],
+      "technologies": [
+        {
+          "name": "ASP.NET Core"
+        },
+        {
+          "name": "Entity Framework Core"
+        },
+        {
+          "name": "Visual Studio 2015 Community"
+        },
+        {
+          "name": "Bitbucket"
+        },
+        {
+          "name": "Tortoise git"
+        },
+        {
+          "name": "Angular 4"
+        }
+      ]
+    },
+    {
       "name": "KCSG",
       "from": "2016-10-07",
       "to": "2017-04-01",
@@ -14,7 +122,7 @@
       "responsibilities": [
         "Study source code of the old system built on Power builder.",
         "Support business analysists to create SRS document.",
-        "Deploy new system on MVC ASP.NET Techonology based on the newly created SRS documents.",
+        "Deploy new system on MVC ASP.NET Technology based on the newly created SRS documents.",
         "Create Q&A list.",
         "Contact with customers to verify documents.",
         "Support customer to deploy and use system."

@@ -4,7 +4,7 @@ angular.module('sidebar', ['ngRoute', 'general-info-service'])
     .directive('sidebar', function () {
         return {
             restrict: 'E',
-            templateUrl: "components/sidebar/sidebar.html",
+            templateUrl: "components/side-bar/side-bar.html",
             controller: 'SidebarController',
             scope: {
                 accountProfileName: '@',
