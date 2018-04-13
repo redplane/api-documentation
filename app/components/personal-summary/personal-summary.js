@@ -4,7 +4,7 @@ angular.module('personal-summary', [
     'ngRoute',
     'general-info-service'
 ])
-    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    .config([function ($locationProvider, $routeProvider, $stateProvider) {
         $locationProvider.hashPrefix('!');
 
         $routeProvider
