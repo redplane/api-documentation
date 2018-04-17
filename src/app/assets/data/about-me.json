@@ -1,0 +1,12 @@
+{
+  "title": "ABOUT_ME",
+  "icon": "glyphicon glyphicon-pencil",
+  "fullName": "Nguyen Duy Linh",
+  "photo": "/assets/avatar.jpg",
+  "role": "Full-stack developer",
+  "paragraphs": [
+    "TALK_ABOUT_DREAM",
+    "WHAT_IM_DOING",
+    "PERSONAL_SOLOGAN"
+  ]
+}

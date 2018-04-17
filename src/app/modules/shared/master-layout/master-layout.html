@@ -1,0 +1,27 @@
+<div ng-init="init()">
+    <div class="col-lg-3">
+        <side-bar profile-image="/assets/avatar.jpg"
+                  profile-name="Nguyen Duy Linh"
+                  profile-title="Full-stack developer">
+        </side-bar>
+    </div>
+    <div class="col-lg-9">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>
+                    <b class="text-danger">
+                        <i class="text-capitalize">
+                            {{translation[$state.current.name] | translate}}
+                        </i>
+                    </b>
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+</div>
