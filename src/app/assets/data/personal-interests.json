@@ -4,12 +4,12 @@
       "name": "PLAY_COMPUTER_GAMES",
       "icon": "glyphicon",
       "link": "www.google.com",
-      "description": "Prefer action games such as: Call of duty, Battle field, Counter strike, ..."
+      "description": "PLAY_COMPUTER_GAMES_DESCRIPTION"
     },
     {
       "name": "LEARN_PROGRAMMING",
       "link": "www.google.com",
-      "description": "Prefer learning technologies and their apply at work."
+      "description": "PREFER_LEARNING_TECHNOLOGIES"
     },
     {
       "name": "Music",

@@ -50,6 +50,8 @@
   "TITLE_TALK_ABOUT_SKILLS": "Here is what I know ...",
   "TITLE_TALK_ABOUT_PROJECT": "Projects I've taken part in ...",
   "PLAY_COMPUTER_GAMES": "Playing computer games",
+  "PLAY_COMPUTER_GAMES_DESCRIPTION": "Prefer FPS games, such as: <a href='javascript:void(0);'>Call of duty</a>, <a href='javascript:void(0);'>Counter strike</a>, ...",
+  "PREFER_LEARNING_TECHNOLOGIES": "Prefer learning new technologies and apply them at work",
   "LEARN_PROGRAMMING": "Learning programming languages and technologies",
   "TITLE_TIME": "Time",
   "TITLE_COMPANY": "Company",
@@ -57,5 +59,6 @@
   "TITLE_RESPONSIBILITIES": "Responsibilities",
   "TITLE_TECHNOLOGIES": "Technologies",
   "TITLE_ROLES": "Roles",
-  "PRINT": "Print"
+  "PRINT": "Print",
+  "PRINT_PDF": "Print PDF"
 }
