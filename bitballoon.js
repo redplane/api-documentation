@@ -7,9 +7,8 @@ const clientSecret = '0625b9e63ae65dd0e1b1337fafd0ccf68679cf99134316053f6d2d3061
 const bitBalloon = require("bitballoon");
 
 // Import node-zip
-const NodeZip = require('node-zip');
-let nodeZip = new NodeZip();
-zip
+const zipdir = require('zip-dir');
+
 // Create bit-balloon client.
 let bitBalloonClient = bitBalloon.createClient({client_id: clientId, client_secret: clientSecret});
 
@@ -23,16 +22,21 @@ bitBalloonClient
                 return console.log(error);
 
             let pathZip = `src/dist/dist.zip`;
-            console.log(pathZip);
-            site.createDeploy({zip: pathZip}, (error, deploy) => {
-                if (error)
-                    return console.log("Error updating site %o", error);
+            zipdir('/src/dist', { saveTo: '/src/dist.zip' }, function (err, buffer) {
+                // `buffer` is the buffer of the zipped file
+                // And the buffer was saved to `~/myzip.zip`
+                site.createDeploy({zip: '/src/dist.zip'}, (error, deploy) => {
+                    if (error)
+                        return console.log("Error updating site %o", error);
 
-                deploy.waitForReady(function (err, deploy) {
-                    if (err) return console.log("Error updating site %o", err);
-                    console.log("Site redeployed");
+                    deploy.waitForReady(function (err, deploy) {
+                        if (err) return console.log("Error updating site %o", err);
+                        console.log("Site redeployed");
+                    });
                 });
             });
+
+
 
             // console.log(site);
         });

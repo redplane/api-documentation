@@ -27,4 +27,3 @@ deploy:
     secure: "5c98ba0e-6e3a-466e-8d86-21c821ecead8"
   access-token:
     secure: "d99083e2e383813c4c3ffcd5b5ca8e8dc17c8c5827036a08cf8771ff96ada0c3"
-  local-dir: "src/dist"
