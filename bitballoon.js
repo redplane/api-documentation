@@ -5,6 +5,12 @@ const clientSecret = '0625b9e63ae65dd0e1b1337fafd0ccf68679cf99134316053f6d2d3061
 
 // Import bitballoon library.
 const bitBalloon = require("bitballoon");
+
+// Import node-zip
+const NodeZip = require('node-zip');
+let nodeZip = new NodeZip();
+zip
+// Create bit-balloon client.
 let bitBalloonClient = bitBalloon.createClient({client_id: clientId, client_secret: clientSecret});
 
 bitBalloonClient
@@ -12,22 +18,41 @@ bitBalloonClient
         if (error)
             return console.log(error);
 
-        // Initialize deploy options.
-        let oDeployOptions = {
-            access_token: accessToken,
-            site_id: '5c98ba0e-6e3a-466e-8d86-21c821ecead8',
-            dir: dist
-        };
-
-        console.log(accessToken);
-
-        bitBalloon.deploy(oDeployOptions, (error, deploy) => {
-            if (error) {
-                console.log(deploy);
+        bitBalloonClient.site('5c98ba0e-6e3a-466e-8d86-21c821ecead8', (error, site) => {
+            if (error)
                 return console.log(error);
-            }
-            console.log('Deployment completed');
+
+            let pathZip = `src/dist/dist.zip`;
+            console.log(pathZip);
+            site.createDeploy({zip: pathZip}, (error, deploy) => {
+                if (error)
+                    return console.log("Error updating site %o", error);
+
+                deploy.waitForReady(function (err, deploy) {
+                    if (err) return console.log("Error updating site %o", err);
+                    console.log("Site redeployed");
+                });
+            });
+
+            // console.log(site);
         });
+
+        // // Initialize deploy options.
+        // let oDeployOptions = {
+        //     access_token: accessToken,
+        //     site_id: '5c98ba0e-6e3a-466e-8d86-21c821ecead8',
+        //     dir: 'src/dist'
+        // };
+        //
+        // console.log(accessToken);
+        //
+        // bitBalloon.deploy(oDeployOptions, (error, deploy) => {
+        //     if (error) {
+        //         console.log(deploy);
+        //         return console.log(error);
+        //     }
+        //     console.log('Deployment completed');
+        // });
 
         return accessToken;
     });
