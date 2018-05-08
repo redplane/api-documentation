@@ -17,29 +17,30 @@ bitBalloonClient
         if (error)
             return console.log(error);
 
-        bitBalloonClient.site('5c98ba0e-6e3a-466e-8d86-21c821ecead8', (error, site) => {
-            if (error)
-                return console.log(error);
-
-            let pathZip = `src/dist/dist.zip`;
-            zipdir(dist, { saveTo: '~/src/dist.zip' }, function (err, buffer) {
-                // `buffer` is the buffer of the zipped file
-                // And the buffer was saved to `~/myzip.zip`
-                site.createDeploy({zip: '/src/dist.zip'}, (error, deploy) => {
-                    if (error)
-                        return console.log("Error updating site %o", error);
-
-                    deploy.waitForReady(function (err, deploy) {
-                        if (err) return console.log("Error updating site %o", err);
-                        console.log("Site redeployed");
-                    });
-                });
-            });
-
-
-
-            // console.log(site);
-        });
+        console.log(accessToken);
+        // bitBalloonClient.site('5c98ba0e-6e3a-466e-8d86-21c821ecead8', (error, site) => {
+        //     if (error)
+        //         return console.log(error);
+        //
+        //     let pathZip = `src/dist/dist.zip`;
+        //     zipdir(dist, { saveTo: '~/src/dist.zip' }, function (err, buffer) {
+        //         // `buffer` is the buffer of the zipped file
+        //         // And the buffer was saved to `~/myzip.zip`
+        //         site.createDeploy({zip: '/src/dist.zip'}, (error, deploy) => {
+        //             if (error)
+        //                 return console.log("Error updating site %o", error);
+        //
+        //             deploy.waitForReady(function (err, deploy) {
+        //                 if (err) return console.log("Error updating site %o", err);
+        //                 console.log("Site redeployed");
+        //             });
+        //         });
+        //     });
+        //
+        //
+        //
+        //     // console.log(site);
+        // });
 
         // // Initialize deploy options.
         // let oDeployOptions = {
