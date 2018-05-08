@@ -8,23 +8,22 @@ let bitBalloonClient = bitBalloon.createClient({client_id: clientId, client_secr
 
 bitBalloonClient
     .authorizeFromCredentials((error, accessToken) => {
-        if (error) {
-            console.log(error);
-        }
+        if (error)
+            return console.log(error);
 
-        // return;
-        bitBalloon.deploy({
+        // Initialize deploy options.
+        let oDeployOptions = {
             access_token: accessToken,
             site_id: '5c98ba0e-6e3a-466e-8d86-21c821ecead8',
             dir: dist
-        },  (error, deploy) => {
-            if (error) {
+        };
+
+        bitBalloon.deploy(oDeployOptions,  (error, deploy) => {
+            if (error)
                 return console.log(error);
-            }
-            console.log("New deploy is live");
+            console.log('Deployment completed');
         });
 
-        // console.log(`Access token = ${accessToken}`);
         return accessToken;
         // Client is now ready to do requests
         // You can store the access_token to avoid authorizing in the future
