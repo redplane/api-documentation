@@ -1,29 +1,19 @@
 language: node_js
 node_js:
-  - "9.8.0"
-
-# Using cache to speed up the build.
+- 9.8.0
+env:
+  global:
+  - secure: ceftJg16X9tjH/X8WtyVbhBdAntlcn0z9B/STKYWCQb3ZRKaS4wT1Bw5j7bJOJAy1Z2TDqczB1YaEmvOdZrD5WAeeHG0yKw4cLALU9XBFI2fnneVDg3DeIwpGepk5tTForYZ5r/tXU3uPcmsNf8O/wwpd7/XGsKl7DDyvi3necxjwKVoEQjY8jEXLI4sx1tQavjSibLdr1ISjg8P6uo/qplMLlb+gAy33KnuslTQGnAKsgRd5woFU5QDrbs8SU/XajHfM7tfu39/QfXmVcSZSZGzojLMDTywijxLJCtXXEHLqs0ZJVT1KCGJwvDgL3CkaL5OVWZQnWjy3pE32pXbXRQwsDmkzv0FzE59JCyseXUWv2hI6Ej4gAgZLqZepZi+KyeBdnRFsLl3CUuxt+S9+pT+axTLGV5tNRFQZkEE64vm3b+OjcL9iIRw5btTfnR/Qv4jj323G1LwMv4twD1KwFSAPbxzpU5iQdE1sKxcoZ5XJmI6Qc8iEiolfw5GLMGTx7Q1QyHXuiyuxb4gIa5MS5kRAk271vtTFrc5or991EY5eK/HASWEpwunF5JkcTCv4I0nJdoSll97TeSUAD8V93vVYF9ujAOgw+u3VqyFtFrsy4CCMvcjxw2JgRVXKtYAVTYvMVWS7gd2xhbBALgoWYqlWkP7KB595WwKNWe/DaQ=
+  - secure: KfgVy3H9n7LUFPy1CF3ZpIUTz6DVzX6k5lUB5vdntUvzmxbwBcB8Dq3cdU59L5m1Tw3iQom3v/qe5xXxR8ILPHWUqf1zQ1Aw542FT/ZpOvgAewI+7lh3MsxVZjEUalDolTMTs5TPDvX8/ISH9XxADZIgtHE5UtN9um+JiUSHD/JRlIwB7rjOk40pRhpvZmRLFja1nxY6m1Byi7/gL/KzijExgqtdMxVJwTcZlhnHSEG5kYV8lg+CiQjhqb4Xu3UieUYNPi3+U8zF8npgp4DGGOeZHR8GsXX91jbj39V4WKsMnDXFQ/MVTJMnQ9NxJRx4MMmAjbLAIqXH8d6+AI0C/cioVRAt1JVB31v60pMH/cr0iirecS9vXmblAoHEAD7+5er/rHZwHXXoIA231CY7S5RsYXersR3UFRBG9Ze1tG6YjZtq3mzu5FUKL57rWHZUCb84+GTixzQ+ViuSt+LU6LpjTOYMqi0v1M36zPOw7IHcTv6lHeBw2KmD4Xgiaj6od0PN1uwXiN3ihtY6dKYGioCdzbCsXQWTgS/0WiLR7F4BNlSnp6LGpAyGrJShev7nzBv1AAz3qfkEJ3VUOvCDCNG4qI4Wye6DLc7GA9XQpBq1AZuXTqixWO48YLmI2EU1TDf8rlYia9HPlB929h3oxVnJvcwU38/jUq1+YD3X+d8=
 cache:
   directories:
-    - "node_modules"
-
-# Dependency installation phrase.
+  - node_modules
 install:
-  # Install bitballoon.
-  - npm install bitballoon
-
-  # Install necessary packages.
-  - npm install
-
-# Build phrase.
+- npm install bitballoon
+- npm install
 script:
-  # Build the application.
-  - npm run build
-
-# Deployment phrase
+- npm run build
 deploy:
   provider: bitballoon
-  site-id:
-    secure: "5c98ba0e-6e3a-466e-8d86-21c821ecead8"
-  access-token:
-    secure: "d99083e2e383813c4c3ffcd5b5ca8e8dc17c8c5827036a08cf8771ff96ada0c3"
+  site-id: $BB_SITE_ID
+  access-token: $BB_ACCESS_TOKEN

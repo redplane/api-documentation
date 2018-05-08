@@ -22,7 +22,7 @@ bitBalloonClient
                 return console.log(error);
 
             let pathZip = `src/dist/dist.zip`;
-            zipdir('/src/dist', { saveTo: '/src/dist.zip' }, function (err, buffer) {
+            zipdir(dist, { saveTo: '~/src/dist.zip' }, function (err, buffer) {
                 // `buffer` is the buffer of the zipped file
                 // And the buffer was saved to `~/myzip.zip`
                 site.createDeploy({zip: '/src/dist.zip'}, (error, deploy) => {
