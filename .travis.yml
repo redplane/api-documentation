@@ -1,13 +1,21 @@
 language: node_js
 node_js:
   - "9.8.0"
+
+# Dependency installation phrase.
 install:
   # Install bitballoon.
   - npm install bitballoon
 
   # Install necessary packages.
   - npm install
-script:
 
+# Build phrase.
+script:
+  # Build the application.
+  - npm run build
+
+# Build success.
+after_success:
   # Deploy website to bitballoon.
   - node bitballoon.js
