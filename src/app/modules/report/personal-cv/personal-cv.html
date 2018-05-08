@@ -76,6 +76,7 @@
                     <b>{{interest.name | translate}}</b>
                 </div>
                 <div class="col-sm-9">
+                    {{interest | json}}
                     <div class="form-group">
                         <ng-bind-html ng-bind-html="interest.description | translate"></ng-bind-html>
                     </div>
