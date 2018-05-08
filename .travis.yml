@@ -14,6 +14,5 @@ install:
 - npm install
 script:
 - npm run build
-- node zip.js
 after_success:
-- node bitballoon --site-id=$BB_SITE_ID --client-id=$BB_CLIENT_ID --client-secret=$BB_CLIENT_SECRET
+- node bitballoon.js --site-id=$BB_SITE_ID --client-id=$BB_CLIENT_ID --client-secret=$BB_CLIENT_SECRET
