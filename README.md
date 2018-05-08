@@ -1,4 +1,4 @@
-# ng-personal-cv
+# ng-personal-cv [![Build Status](https://travis-ci.org/redplane/ng-personal-cv.svg?branch=master)](https://travis-ci.org/redplane/ng-personal-cv)
 
 ### Description:
 - A simple project structure to make a CV.
