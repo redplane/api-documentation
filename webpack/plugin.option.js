@@ -117,7 +117,6 @@ exports = module.exports = {
             plugins.push(browserSyncPlugin);
         }
 
-
         //#region Html plugin
 
         //Automatically inject chunks into html files.

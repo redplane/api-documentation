@@ -25,6 +25,7 @@ const paths = {
 * */
 module.exports = {
     context: settings.paths.getSource(__dirname),
+    devtool: !bProductionMode ? 'source-map' : false,
     entry: {
         'app': path.resolve(paths.app, 'app.js')
     },
