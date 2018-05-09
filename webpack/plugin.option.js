@@ -77,7 +77,7 @@ exports = module.exports = {
             });
         }
 
-        plugins.push(new CopyWebpackPlugin(oCopiedItems));
+        // plugins.push(new CopyWebpackPlugin(oCopiedItems));
 
         //#endregion
 
