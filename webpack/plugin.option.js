@@ -1,3 +1,4 @@
+const path = require('path');
 const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -72,12 +73,12 @@ exports = module.exports = {
 
         for (let item of oSourceCopiedItems){
             oCopiedItems.push({
-                from: `${paths.app}\\${item}`,
-                to: `${paths.dist}\\${item}`
+                from: path.resolve(paths.app, item),
+                to: path.resolve(paths.dist, item)
             });
         }
 
-        // plugins.push(new CopyWebpackPlugin(oCopiedItems));
+        plugins.push(new CopyWebpackPlugin(oCopiedItems));
 
         //#endregion
 
@@ -103,7 +104,7 @@ exports = module.exports = {
                 host: 'localhost',
                 port: 8000,
                 files: [
-                    `${paths.source}\\'index.html`
+                    path.resolve(paths.source, 'index.html')
                 ],
                 server: {
                     baseDir: [
@@ -122,7 +123,7 @@ exports = module.exports = {
         //Automatically inject chunks into html files.
         plugins.push(new HtmlWebpackPlugin({
             inject: false,
-            template: `${paths.source}\\${'index.html'}`
+            template: path.resolve(paths.source, 'index.html')
         }));
 
         //#endregion

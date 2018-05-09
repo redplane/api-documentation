@@ -19,7 +19,6 @@ cache:
 
 # Dependency installation phrase.
 install:
-- npm install bitballoon
 - npm install
 
 # Build phrase

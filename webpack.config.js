@@ -26,14 +26,14 @@ const paths = {
 module.exports = {
     context: settings.paths.getSource(__dirname),
     entry: {
-        'app': `${paths.app}\\app.js`
+        'app': path.resolve(paths.app, 'app.js')
     },
     module: {
         rules: webpackRules.get()
     },
     plugins: webpackPlugins.get(paths, bProductionMode),
     output: {
-        path: path.resolve(paths.dist),
+        path: paths.dist,
         filename: '[name].js'
     }
 };
